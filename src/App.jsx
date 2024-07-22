@@ -25,7 +25,7 @@ const App = () => {
         return language ? language.id : null;
       };
       const to = getIdByName(selectedValue)
-      const response = await axios.post('http://localhost:8000/translate', { text: transcript, to: to });
+      const response = await axios.post('https://translation-backend-gilt.vercel.app', { text: transcript, to: to });
       console.log('Translation response:', response.data);
       setTranslatedText(response.data.trans);
     } catch (error) {
